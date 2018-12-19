@@ -1,0 +1,88 @@
+{
+  "protocols": [
+    {
+      "id": "ether",
+      "packetClass": "org.pcap4j.packet.EthernetPacket",
+      "headerClass": "org.pcap4j.packet.EthernetPacket$EthernetHeader",
+      "fields": [
+        { "id": "destinationAddress", "method": "getDstAddr" },
+        { "id": "sourceAddress", "method": "getSrcAddr" },
+        { "id": "etherType", "method": "getType" }
+      ]
+    },
+    {
+      "id": "ipv4",
+      "packetClass": "org.pcap4j.packet.IpV4Packet",
+      "headerClass": "org.pcap4j.packet.IpV4Packet$IpV4Header",
+      "fields": [
+        { "id": "dontFragment", "method": "getDontFragmentFlag" },
+        { "id": "destinationAddress", "method": "getDstAddr" },
+        { "id": "sourceAddress", "method": "getSrcAddr" },
+        { "id": "fragmentOffset", "method": "getFragmentOffset" },
+        { "id": "headerChecksum", "method": "getHeaderChecksum" },
+        { "id": "identification", "method": "getIdentificationAsInt" },
+        { "id": "ihl", "method": "getIhlAsInt" },
+        { "id": "moreFragments", "method": "getMoreFragmentFlag" },
+        { "id": "padding", "method": "getPadding" },
+        { "id": "protocol", "method": "getProtocol" },
+        { "id": "reserved", "method": "getReservedFlag" },
+        { "id": "tos", "method": "getTos" },
+        { "id": "totalLength", "method": "getTotalLengthAsInt" },
+        { "id": "ttl", "method": "getTtlAsInt" },
+        { "id": "version", "method": "getVersion" }
+      ]
+    },
+    {
+      "id": "ipv6",
+      "packetClass": "org.pcap4j.packet.IpV6Packet",
+      "headerClass": "org.pcap4j.packet.IpV6Packet$IpV6Header",
+      "fields": [
+        { "id": "destinationAddress", "method": "getDstAddr" },
+        { "id": "flowLabel", "method": "getFlowLabel" },
+        { "id": "hopLimit", "method": "getHopLimitAsInt" },
+        { "id": "nextHeader", "method": "getNextHeader" },
+        { "id": "payloadLength", "method": "getPayloadLengthAsInt" },
+        { "id": "protocol", "method": "getProtocol" },
+        { "id": "sourceAddress", "method": "getSrcAddr" },
+        { "id": "trafficClass", "method": "getTrafficClass" },
+        { "id": "version", "method": "getVersion" }
+      ]
+    },
+    {
+      "id": "tcp",
+      "packetClass": "org.pcap4j.packet.TcpPacket",
+      "headerClass": "org.pcap4j.packet.TcpPacket$TcpHeader",
+      "fields": [
+        { "id": "ack", "method": "getAck" },
+        { "id": "ackNumber", "method": "getAcknowledgmentNumberAsLong" },
+        { "id": "checksum", "method": "getChecksum" },
+        { "id": "dataOffset", "method": "getDataOffsetAsInt" },
+        { "id": "destinationPort", "method": "getDstPort", "cast": "namedNumber" },
+        { "id": "fin", "method": "getFin" },
+        { "id": "options", "method": "getOptions" },
+        { "id": "padding", "method": "getPadding" },
+        { "id": "psh", "method": "getPsh" },
+        { "id": "reserved", "method": "getReserved" },
+        { "id": "rst", "method": "getRst" },
+        { "id": "sequence", "method": "getSequenceNumberAsLong" },
+        { "id": "sourcePort", "method": "getSrcPort", "cast": "namedNumber" },
+        { "id": "syn", "method": "getSyn" },
+        { "id": "urg", "method": "getUrg" },
+        { "id": "urgentPointer", "method": "getUrgentPointerAsInt" },
+        { "id": "window", "method": "getWindowAsInt" },
+        { "id": "flags", "offset": 13, "mask": 63 }
+      ]
+    },
+    {
+      "id": "udp",
+      "packetClass": "org.pcap4j.packet.UdpPacket",
+      "headerClass": "org.pcap4j.packet.UdpPacket$UdpHeader",
+      "fields": [
+        { "id": "checksum", "method": "getChecksum" },
+        { "id": "destinationPort", "method": "getDstPort", "cast": "namedNumber" },
+        { "id": "length", "method": "getLengthAsInt" },
+        { "id": "sourcePort", "method": "getSrcPort", "cast": "namedNumber" }
+      ]
+    }
+  ]
+}

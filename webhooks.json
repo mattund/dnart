@@ -1,0 +1,10 @@
+{
+  "webhooks": [
+    {
+      "id": "your-webhook",
+      "name": "DNART",
+      "title": "DNART Attack Detected",
+      "url": "https://slack/api/url"
+    }
+  ]
+}

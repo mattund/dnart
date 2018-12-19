@@ -1,0 +1,56 @@
+{
+  "attacks": [
+    {
+      "id": "ntp",
+      "name": "UDP NTP Amplification",
+      "field": { "id": "udp.sourcePort", "where": [ {"eq": 123 }] }
+    },
+    {
+      "id": "dns",
+      "name": "UDP DNS Amplification",
+      "field": { "id": "udp.sourcePort", "where": [ {"eq": 53 }] }
+    },
+    {
+      "id": "chargen",
+      "name": "UDP CHARGEN Amplification",
+      "field": { "id": "udp.sourcePort", "where": [ {"eq": 19 }] }
+    },
+    {
+      "id": "ssdp",
+      "name": "UDP SSDP Amplification",
+      "field": { "id": "udp.sourcePort", "where": [ {"eq": 1900 }] }
+    },
+
+    {
+      "id": "xmas",
+      "name": "TCP XMAS Flood",
+      "field": { "id": "tcp.flags", "where": [ {"eq": 63 }] }
+    },
+    {
+      "id": "syn",
+      "name": "TCP SYN Flood",
+      "field": { "id": "tcp.flags", "where": [ {"eq": 2 }] }
+    },
+    {
+      "id": "tcp-dport",
+      "name": "TCP Focused Destination Port",
+      "field": { "id": "tcp.destinationPort" }
+    },
+    {
+      "id": "udp-dport",
+      "name": "UDP Focused Destination Port",
+      "field": { "id": "udp.destinationPort" }
+    },
+
+    {
+      "id": "ip4",
+      "name": "IPv4 DoS",
+      "field": { "id": "ipv4.sourceAddress" }
+    },
+    {
+      "id": "ip6",
+      "name": "IPv6 DoS",
+      "field": { "id": "ipv6.sourceAddress" }
+    }
+  ]
+}
